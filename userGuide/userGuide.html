@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" href="../assets/ddMusic.ico" />
+  <title>User Guide</title>
+  <style>
+    :root {
+      --guide-surface: var(--card-bg);
+      --guide-text: var(--theme-text);
+      --guide-muted: var(--muted);
+      --guide-border: var(--card-border);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--guide-text);
+      font-family: "Trebuchet MS", Arial, sans-serif;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.75rem;
+      background: var(--guide-surface);
+      border: 1px solid var(--guide-border);
+      border-radius: 24px;
+      line-height: 1.65;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: 1.8rem;
+      line-height: 1.2;
+      color: #fff4e2;
+    }
+
+    h2 {
+      margin: 1.75rem 0 0.5rem;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      color: #fff4e2;
+      border-top: 2px solid var(--panel-border);
+      padding-top: 1rem;
+    }
+
+    h3 {
+      margin: 1rem 0 0.35rem;
+      font-size: 1rem;
+      color: #fff4e2;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    ul,
+    ol {
+      margin: 0.4rem 0 0.9rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.2rem 0;
+    }
+
+    .lead {
+      color: var(--guide-muted);
+      margin-bottom: 1rem;
+    }
+
+    .toc {
+      position: sticky;
+      top: 0.75rem;
+      z-index: 5;
+      background: rgba(18, 21, 33, 0.85);
+      border: 1px solid var(--panel-border);
+      border-radius: 10px;
+      padding: 0.7rem 0.85rem;
+      margin: 0 0 1rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .toc-title {
+      margin: 0 0 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--guide-muted);
+    }
+
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.7rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    .toc a {
+      color: var(--theme-text);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .toc a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    :target {
+      scroll-margin-top: 15vh;
+    }
+
+    .sec-overview {
+      border-top-color: #93c5fd;
+      color: #1d4ed8;
+    }
+
+    .sec-motions {
+      border-top-color: #86efac;
+      color: #15803d;
+    }
+
+    .sec-critical {
+      border-top-color: #fdba74;
+      color: #b45309;
+    }
+
+    .sec-summary {
+      border-top-color: #c4b5fd;
+      color: #6d28d9;
+    }
+
+    .sec-reasoning {
+      border-top-color: #fda4af;
+      color: #be123c;
+    }
+
+    .sec-breakdown {
+      border-top-color: #67e8f9;
+      color: #0e7490;
+    }
+
+    .sec-strategy {
+      border-top-color: #fcd34d;
+      color: #92400e;
+    }
+
+    .note {
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin: 0.75rem 0;
+    }
+
+    .guide-top-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.9rem;
+    }
+
+    .guide-top-links a {
+      color: var(--theme-text);
+      text-decoration: none;
+      padding: 0.62rem 0.78rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .guide-top-links a:hover,
+    .guide-top-links a:focus-visible {
+      border-color: rgba(255, 195, 111, 0.35);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 640px) {
+      .content {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+    }
+
+    .noBullet {
+      list-style-type: none;
+    }
+
+    .secondLevel {
+      margin-left: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell song-list-page-shell">
+    <div class="page-orb page-orb-left"></div>
+    <div class="page-orb page-orb-right"></div>
+    <main class="content">
+      <div id="pagetop"></div>
+      <div class="guide-top-links">
+        <a href="../index.html">Back to Player</a>
+        <a href="../preferences.html">Preferences</a>
+      </div>
+      <h1>Impala Streamer User Guide</h1>
+
+      <p class="lead">Quick help for everyday listening and playlists.</p>
+
+      <nav class="toc" aria-label="Table of contents">
+        <p class="toc-title">Quick Navigation</p>
+        <ul class="toc-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#signIn">Sign In</a></li>
+          <li><a href="#playMusic">Play Music</a></li>
+          <li><a href="#playVideos">Play Videos</a></li>
+          <li><a href="#webcast">Webcast</a></li>
+          <li><a href="#repeat-shuffle">Repeat and Shuffle</a></li>
+          <li><a href="#makePlaylist">Save Favorites (Starred)</a></li>
+          <li><a href="#managePlaylists">Edit Playlists</a></li>
+          <li><a href="#addSongs">Add Songs from Library</a></li>
+          <li><a href="#userPreferences">Preferences</a></li>
+          <li><a href="#localJsonGuide">Local Library JSON</a></li>
+          <li><a href="#quickFixes">Quick Fixes</a></li>
+          <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+          <li><a href="#diagnostics">Diagnostics</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="features" class="sec-features">Features</h2>
+      <p><strong>Impala Core stays stable; major capabilities are added through microservices and parallel
+          applications.</strong></p>
+      <ul>
+        <li>Private cloud media library playback</li>
+        <li>Local Library Companion for local music/video folders</li>
+        <li>Custom playlists saved on this device</li>
+        <li>Playlist import/export for sharing with users on the same library</li>
+        <li>Starred-track staging for quick playlist building</li>
+        <li>Audio and video playback with resume support</li>
+        <li>Optional live stream mode</li>
+        <li>Backup and restore for browser-local Impala data</li>
+        <li>Instance-specific configuration for separate deployments</li>
+      </ul>
+
+      <h2 id="signIn" class="sec-signIn">Sign In</h2>
+      <p><strong>Summary: open the app and sign in when prompted.</strong></p>
+      <ol>
+        <li>Open Impala Streamer in your browser.</li>
+        <li>
+          If you are sent to the sign-in page, enter your username and
+          password.
+        </li>
+        <li>
+          After sign-in, you are redirected to the player automatically.
+        </li>
+      </ol>
+      <p>If sign-in fails:</p>
+      <ol>
+        <li>Re-check spelling (password is case-sensitive).</li>
+        <li>Try again once.</li>
+        <li>
+          If it still fails, ask your admin to reset or verify your registered user.
+        </li>
+      </ol>
+
+      <h2 id="playMusic" class="sec-playMusic">Playing Music</h2>
+      <p>
+        <strong>Summary: pick a playlist, choose a track, then press Play.</strong>
+      </p>
+      <ol>
+        <li>In Source, choose the playlist you want.</li>
+        <li>Click any song in the Tracks list.</li>
+        <li>Use Play, Pause, Next, and Prev to control playback.</li>
+      </ol>
+      <p>
+        <strong>Tip: the source badge shows where media came from: L = local, C =
+          cloud.</strong>
+      </p>
+
+      <h2 id="playVideos" class="sec-playVideos">Playing Videos</h2>
+      <p>
+        <strong>Summary: Select video from the library and click on the title to
+          begin play immediately, or add videos to a playlist so you can play
+          continuously.</strong>
+      </p>
+      <ol>
+        <li>Notice all videos are added to the video queue.</li>
+        <li>Click any video in the Tracks list.</li>
+        <li>Use Play, Pause, Next, and Prev to control playback.</li>
+      </ol>
+
+
+      <h2 id="videoLibrary" class="sec-videoLibrary">Video Library</h2>
+      <p>
+        <strong>Use browser-friendly video formats such as .mp4, .m4v, .webm, or .mov. Convert .mkv files to .mp4 before
+          indexing.</strong>
+      </p>
+      <p>
+        <strong>Video Library Folder Structure</strong>
+      </p>
+      <p>Standalone movie:</p>
+      <ol class="no-bullets">
+
+        <li>Movie Title/</li>
+        <li class="indent">Movie Title.mp4</li>
+      </ol>
+
+      <p>Movie collection:</p>
+      <ol class="no-bullets">
+        <li>Collection Title/</li>
+        <li class="indent">Movie Title/</li>
+        <li class="indent2">Movie Title.mp4</li>
+        <li class="indent">Movie Title 2/</li>
+        <li class="indent2">Movie Title 2.mp4</li>
+
+      </ol>
+
+      <p>TV series:</p>
+      <ol class="no-bullets">
+        <li>Series Title/</li>
+        <li class="indent">Season 1/</li>
+        <li class="indent2">Episode 1.mp4</li>
+        <li class="indent2">Episode 2.mp4</li>
+        <li class="indent">Season 2/</li>
+        <li class="indent2">Episode 1.mp4</li>
+        <li class="indent2">Episode 2.mp4</li>
+      </ol>
+      </p>
+
+
+      <h2 id="webcast" class="sec-webcast">Webcast or Live Stream</h2>
+      <p>
+        <strong>Summary: You can watch or listen to live stream, or webcast content.</strong>
+      </p>
+      <ol>
+        <li>First, activate live stream in the preferences.</li>
+        <li>Returning back to the player, the button Live Stream will be available, clicking this will allow you to
+          choose your stream.</li>
+        <li>In the live stream screen, after picking your stream, click begin session.</li>
+        <li>Returning to the player, click play to initiate viewing.</li>
+        <li>To switch streams, make sure to end your current streaming session, then choose a new stream and begin a new
+          session.</li>
+      </ol>
+
+      <h2 id="repeat-shuffle" class="sec-repeat-shuffle">
+        Repeat and Shuffle
+      </h2>
+      <p>
+        <strong>Summary: choose repeat and shuffle together or seperately to
+          control behavior for your tracks.</strong>
+      </p>
+      <ol>
+        <li>
+          Tap Repeat to cycle through Repeat Off, Repeat One, and Repeat All.
+        </li>
+        <li>
+          Tap Shuffle to toggle shuffle mode on or off.<br />
+          When shuffling, previous will take you to the last played track, not
+          the previous track in the list.
+        </li>
+        <li>
+          When a video has a saved position, use Resume to jump back in.
+        </li>
+        <li>
+          Video and audio views switch automatically based on the selected
+          track.
+        </li>
+      </ol>
+
+      <h2 id="makePlaylist" class="sec-makePlaylist">
+        Save Favorites (Starred)
+      </h2>
+      <p>
+        <strong>Summary: star songs first, then save those stars into a
+          playlist.</strong>
+      </p>
+      <ol>
+        <li>In the track list, click the star next to songs you want.</li>
+        <li>Use New From Starred to create a new playlist.</li>
+        <li>Enter a playlist name, then confirm.</li>
+        <li>
+          Use Add Starred to send favorites to an existing custom playlist.
+        </li>
+      </ol>
+      <p>If nothing happens:</p>
+      <ol>
+        <li>Check the starred count near the track controls.</li>
+        <li>If it says 0 starred, star at least one song first.</li>
+      </ol>
+
+      <h2 id="managePlaylists" class="sec-managePlaylists">
+        Manage Playlists and Songs
+      </h2>
+      <p><strong>Summary: Use Edit Song List for organizing.</strong></p>
+      <ol>
+        <li>Click Edit Song List.</li>
+        <li>Choose a playlist from the Playlist dropdown.</li>
+        <li>
+          For custom playlists, you can drag to reorder, remove songs, rename,
+          and delete.
+        </li>
+        <li>You can also import a playlist from pasted JavaScript format.</li>
+      </ol>
+      <p>To return to listening, click Back to Player.</p>
+
+      <h2 id="addSongs" class="sec-addSongs">
+        Add Songs from the S4 Library
+      </h2>
+      <p>
+        <strong>Summary: Browse folders and add tracks to a playlist.</strong>
+      </p>
+      <ol>
+        <li>In Edit Song List, select a custom playlist (or create one).</li>
+        <li>
+          Use Audio or Video at the top of the library panel to change browse
+          mode.
+        </li>
+        <li>
+          Filter Library can search artist, album, track, or folder text.
+        </li>
+        <li>
+          Select items and use Add Selected To Playlist, or create a new
+          playlist from selected tracks.
+        </li>
+        <li>
+          Admins may see a Rebuild Index button when signed in with admin
+          rights.
+        </li>
+      </ol>
+
+      <h2 id="userPreferences" class="sec-userPreferences">
+        User Preferences
+      </h2>
+      <p>
+        <strong>Summary: personalize look and behavior from the Preferences
+          page.</strong>
+      </p>
+      <ol>
+        <li>Choose and apply a color palette (with live preview).</li>
+        <li>Set a custom message and medallion image.</li>
+        <li>
+          Optionally set Local Audio Directory and Local Video Directory.
+        </li>
+        <li>
+          Use Test Local Audio and Test Local Video to quickly check
+          reachability.
+        </li>
+        <li>Enable or disable live stream control surfaces.</li>
+      </ol>
+
+      <h2 id="localJsonGuide" class="sec-localJsonGuide">
+        Local Library JSON
+      </h2>
+      <p>
+        <strong>Summary: you can override built-in lists with local JSON
+          entries.</strong>
+      </p>
+      <p>
+        In Preferences, paste or drop a JSON manifest into Local Library JSON,
+        then click Apply Local Library JSON.
+      </p>
+      <p>Example:</p>
+      <pre>
+{
+  "audio": [
+    {
+      "name": "Rolling In The Deep",
+      "artist": "Adele",
+      "album": "21",
+      "file": "01 Rolling In The Deep.mp3"
+    }
+  ],
+  "video": [
+    {
+      "name": "Happy Days",
+      "artist": "Unknown artist",
+      "file": "Happy Days.mp4",
+      "mediaType": "video"
+    }
+  ]
+}</pre>
+      <ol>
+        <li>Use file names or relative paths in each entry.</li>
+        <li>Set local directory roots if your files are hosted locally.</li>
+        <li>Clear Local Library JSON to return to built-in lists.</li>
+      </ol>
+
+      <h2 id="quickFixes" class="sec-quickFixes">Quick Fixes</h2>
+      <p>
+        <strong>Summary: most issues are solved by sign-in, source switching, or
+          refresh.</strong>
+      </p>
+      <p>If a song will not play:</p>
+      <ol>
+        <li>Try a different track in the same playlist.</li>
+        <li>Switch to another Source and then switch back.</li>
+        <li>If prompted, sign in again.</li>
+        <li>Refresh the browser page.</li>
+      </ol>
+      <p>If playlists look wrong:</p>
+      <ol>
+        <li>
+          Go to Preferences and check whether Local Library JSON is enabled.
+        </li>
+        <li>Clear Local Library JSON if you want built-in lists back.</li>
+        <li>Refresh the page.</li>
+      </ol>
+      <p>If stars seem to disappear:</p>
+      <ol>
+        <li>Stars are temporary selections for the current session.</li>
+        <li>
+          Save them with New From Starred or Add Starred before closing.
+        </li>
+      </ol>
+
+      <h2 id="shortcuts" class="sec-shortcuts">Keyboard Shortcuts</h2>
+      <p><strong>Summary: Helpful, but not required.</strong></p>
+      <ol>
+        <li>S: star or unstar current track</li>
+        <li>A: add starred tracks to an existing playlist</li>
+        <li>N: create new playlist from starred tracks</li>
+        <li>M: open Edit Song List</li>
+        <li>C: clear starred tracks</li>
+        <li>H or ?: show hotkey help</li>
+      </ol>
+
+      <h2 id="diagnostics" class="sec-diagnostics">Diagnostics</h2>
+      <p>
+        <strong>Summary: use diagnostics for troubleshooting and health
+          checks.</strong>
+      </p>
+      <ol>
+        <li>Click the Diag button on the player page to open diagnostics.</li>
+        <li>Use Refresh on the diagnostics page to pull latest state.</li>
+        <li>
+          Review player status, playlist counts, storage health, and recent
+          errors.
+        </li>
+      </ol>
+
+      <div id="pagebottom"></div>
+    </main>
+  </div>
+
+  <script src="../app-config.js"></script>
+  <script src="../ui-preferences.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+.env
+.old
+archived
+.private
+node_modules/
+Thumbs.db
+temp.old
+services/local-library-helper/*.exe
