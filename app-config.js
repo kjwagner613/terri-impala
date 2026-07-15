@@ -1,15 +1,15 @@
 window.KW_PLAYER_CONFIG = window.KW_PLAYER_CONFIG || {
-  apiBaseUrl: "https://impalastreamer-4926a59bda8a.herokuapp.com",
+  apiBaseUrl: "https://terri-impala-bf21f1293556.herokuapp.com/",
   liveStreamApiBaseUrl: "https://impala-livestream-0225c97b1e97.herokuapp.com",
   localLiveStreamApiBaseUrl: "https://impala-livestream-0225c97b1e97.herokuapp.com",
   authStorageKey: "impalaStreamer.authSession",
   playlistStoragePrefix: "impalaStreamer",
-  instanceStorageId: "",
+  instanceStorageId: "no1Healer",
   builtInPlaylistsEnabled: false,
   enabledBuiltInPlaylistIds: [],
   brandName: "Impala Streamer",
   appVersion: "1.0.0",
-  appBuildDate: "2026.06.29",
+  appBuildDate: "2026.07.135",
   localHelperDownloadUrl: ""
 };
 
